@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFF</color>
+    <color name="light_gray">#D3D3D3</color> <!-- 定义浅灰色 -->
+    <color name="black">#000000</color>
+    <color name="dark_gray">#A9A9A9</color> <!-- 定义深灰色 -->
+    <color name="gray">#808080</color>
+    <color name="your_color_for_edittext">#FFFFFF</color>  <!-- 这里示例设置为白色，可按需替换 -->
+    <color name="your_color_for_linear_layout">#000000</color>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 应用的基础主题，可继承自系统默认主题或者自定义主题 -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- 在这里可以设置一些全局的主题属性，比如窗口背景颜色等 -->
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+
+    <!-- 定义通用的文本样式 -->
+    <style name="AppTheme.TextAppearance.Title" parent="android:TextAppearance">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTheme.TextAppearance.Timestamp" parent="android:TextAppearance">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#888888</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="AppTheme.Light" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:statusBarColor">@color/light_gray</item>
+        <!-- 为ConstraintLayout添加背景颜色属性，这里设置为白色 -->
+        <item name="android:background">@color/white</item>
+    </style>
+    <style name="AppTheme.Dark" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:windowBackground">@color/black</item>
+        <item name="android:statusBarColor">@color/dark_gray</item>
+        <!-- 为ConstraintLayout添加背景颜色属性，这里设置为黑色 -->
+        <item name="android:background">@color/black</item>
+    </style>
+
+</resources>
