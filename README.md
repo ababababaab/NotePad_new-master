@@ -5,7 +5,7 @@
 - **实现方式**：在 `NotesList` 类里，对查询笔记列表获取列信息的 `PROJECTION` 数组添加代表时间戳的列（如 `NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE`），同时在 `SimpleCursorAdapter` 构造的 `dataColumns` 数组中添加时间戳列对应名称，在 `viewIDs` 数组里指定用于显示时间戳的界面控件 `ID`（对应显示时间戳的 `TextView` 的 `ID`），这样在数据查询绑定到列表项显示时，就能展示时间戳信息。 
 
 - **关键代码**：
-```
+```java
 private static final String[] PROJECTION = new String[] {
     NotePad.Notes._ID,
     NotePad.Notes.COLUMN_NAME_TITLE,
@@ -34,7 +34,7 @@ SimpleCursorAdapter adapter = new SimpleCursorAdapter(
 - **实现方式**：在 `NotesList` 类中，扩展 `performSearch` 方法里的查询条件构建逻辑，将原来仅按标题模糊匹配查询修改为构建 `OR` 条件，同时匹配标题和内容列与输入关键词的模糊匹配情况。并且在用户输入查询内容的界面（如 `startSearchActivity` 方法弹出的对话框）做好提示，告知可输入标题或内容相关关键词进行查询等交互细节优化。 
 
   -  **关键代码**：
- ```
+ ```java
    private void performSearch() {
     if (TextUtils.isEmpty(searchQuery)) {
         currentCursor = getContentResolver().query(
@@ -88,7 +88,7 @@ SimpleCursorAdapter adapter = new SimpleCursorAdapter(
 - **关键代码**：（示例部分代码，非全部）   
 
 - **整体主题设置示例**：
-```
+```xml
 <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
     <item name="android:windowBackground">@color/white</item>
 </style>
@@ -99,7 +99,7 @@ SimpleCursorAdapter adapter = new SimpleCursorAdapter(
 ```   
 
 - **控件颜色应用示例（Title TextView）**：
-```
+```xml
 <style name="AppTheme.TextAppearance.Title" parent="TextAppearance.MaterialComponents.Body1">
     <item name="android:textColor">#333333</item>
     <item name="android:textSize">18sp</item>
@@ -109,7 +109,7 @@ SimpleCursorAdapter adapter = new SimpleCursorAdapter(
 ```   
 
 - **列表项布局（ConstraintLayout 部分约束示例）**：
-```
+```xml
 <TextView
     android:id="@android:id/text1"
    ...
@@ -137,7 +137,7 @@ SimpleCursorAdapter adapter = new SimpleCursorAdapter(
 - **实现方式**：在 `NotesList` 类中，利用 `SORT_ORDERS` 数组定义可供排序的列选项，通过 `currentSortOrderIndex` 变量确定当前排序依据在数组中的索引位置，借助 `isAscendingOrder` 变量控制排序顺序，用户可通过操作界面（如菜单选项等）触发切换这两个变量的值来实现不同排序方式及顺序的调整。`performSort` 方法根据这两个变量值构建 SQL 的 `ORDER BY` 子句发起查询请求获取排序后数据，再用 `SimpleCursorAdapter` 的 `changeCursor` 方法更新列表显示。 
 
 **关键代码**： 
-```
+```java
 private static final String[] SORT_ORDERS = {NotePad.Notes.COLUMN_NAME_TITLE, NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE};
 private int currentSortOrderIndex = 0; // 初始化为按标题排序，索引对应 SORT_ORDERS 数组
 private boolean isAscendingOrder = true; // 初始化为升序
