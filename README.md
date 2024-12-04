@@ -6,8 +6,24 @@
 
 - **关键代码**：
 
- ```java private static final String[] PROJECTION = new String[] {    NotePad.Notes._ID,    NotePad.Notes.COLUMN_NAME_TITLE,    NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE // 添加时间戳列 }; // 在 SimpleCursorAdapter 构造时 String[] dataColumns = {     NotePad.Notes.COLUMN_NAME_TITLE,     NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE  }; // 添加时间戳列到这里 int[] viewIDs = { android.R.id.text1, R.id.time }; // 确保 R.id.time 对应的是用于显示时间戳的 TextView 的 ID SimpleCursorAdapter adapter = new SimpleCursorAdapter(    this,    R.layout.noteslist_item,    currentCursor,    dataColumns,    viewIDs );```
-
+private static final String[] PROJECTION = new String[] {
+    NotePad.Notes._ID,
+    NotePad.Notes.COLUMN_NAME_TITLE,
+    NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE // 添加时间戳列
+};
+// 在 SimpleCursorAdapter 构造时
+String[] dataColumns = { 
+    NotePad.Notes.COLUMN_NAME_TITLE, 
+    NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE 
+}; // 添加时间戳列到这里
+int[] viewIDs = { android.R.id.text1, R.id.time }; // 确保 R.id.time 对应的是用于显示时间戳的 TextView 的 ID
+SimpleCursorAdapter adapter = new SimpleCursorAdapter(
+    this,
+    R.layout.noteslist_item,
+    currentCursor,
+    dataColumns,
+    viewIDs
+);
 
 - **实现图**：![image-20241201212457488](image-20241201212457488.png)
 
