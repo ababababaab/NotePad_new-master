@@ -4,7 +4,7 @@
 
  - **实现方式**：在 `NotesList` 类里，对查询笔记列表获取列信息的 `PROJECTION` 数组添加代表时间戳的列（如 `NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE`），同时在 `SimpleCursorAdapter` 构造的 `dataColumns` 数组中添加时间戳列对应名称，在 `viewIDs` 数组里指定用于显示时间戳的界面控件 `ID`（对应显示时间戳的 `TextView` 的 `ID`），这样在数据查询绑定到列表项显示时，就能展示时间戳信息。 
 
-- **关键代码**： ···java private static final String[] PROJECTION = new String[] {    NotePad.Notes._ID,    NotePad.Notes.COLUMN_NAME_TITLE,    NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE // 添加时间戳列 }; // 在 SimpleCursorAdapter 构造时 String[] dataColumns = {     NotePad.Notes.COLUMN_NAME_TITLE,     NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE  }; // 添加时间戳列到这里 int[] viewIDs = { android.R.id.text1, R.id.time }; // 确保 R.id.time 对应的是用于显示时间戳的 TextView 的 ID SimpleCursorAdapter adapter = new SimpleCursorAdapter(    this,    R.layout.noteslist_item,    currentCursor,    dataColumns,    viewIDs );··· 
+- **关键代码**： ··· java private static final String[] PROJECTION = new String[] {    NotePad.Notes._ID,    NotePad.Notes.COLUMN_NAME_TITLE,    NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE // 添加时间戳列 }; // 在 SimpleCursorAdapter 构造时 String[] dataColumns = {     NotePad.Notes.COLUMN_NAME_TITLE,     NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE  }; // 添加时间戳列到这里 int[] viewIDs = { android.R.id.text1, R.id.time }; // 确保 R.id.time 对应的是用于显示时间戳的 TextView 的 ID SimpleCursorAdapter adapter = new SimpleCursorAdapter(    this,    R.layout.noteslist_item,    currentCursor,    dataColumns,    viewIDs ); ··· 
 
 - **实现图**：![image-20241201212457488](image-20241201212457488.png)
 
