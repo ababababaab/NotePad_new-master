@@ -67,7 +67,12 @@ SimpleCursorAdapter adapter = new SimpleCursorAdapter(
 ```
 
 - **实现图**：
+- 成功（含有当前搜索内容/标题）：
 - ![image-20241201212558188](image-20241201212558188.png)
+- 失败（不含当前搜索内容/标题）：
+- ![image](https://github.com/user-attachments/assets/b267ca14-c905-4b70-9c99-b1e3dbe5c359)
+![image](https://github.com/user-attachments/assets/68da09ef-37ac-4440-8ac6-9ad44f0f9134)
+
 
 - **分析**：通过颜色与主题应用以及布局与控件样式的合理设置，营造出简洁美观、舒适实用且符合操作流程直观性的界面，提升用户使用体验，方便用户查看和操作笔记内容。 
 
