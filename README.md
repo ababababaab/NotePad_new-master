@@ -25,7 +25,8 @@ SimpleCursorAdapter adapter = new SimpleCursorAdapter(
     viewIDs
 );
 ```
-- **实现图**：![image-20241201212457488](image-20241201212457488.png)
+- **实现图**：
+- ![image-20241201212457488](image-20241201212457488.png)
 
 - 2. 笔记搜索功能 
 
@@ -65,7 +66,8 @@ SimpleCursorAdapter adapter = new SimpleCursorAdapter(
 }
 ```
 
-- **实现图**：![image-20241201212558188](image-20241201212558188.png)
+- **实现图**：
+- ![image-20241201212558188](image-20241201212558188.png)
 
 - **分析**：通过颜色与主题应用以及布局与控件样式的合理设置，营造出简洁美观、舒适实用且符合操作流程直观性的界面，提升用户使用体验，方便用户查看和操作笔记内容。 
 
@@ -128,7 +130,8 @@ SimpleCursorAdapter adapter = new SimpleCursorAdapter(
     app:layout_constraintTop_toBottomOf="@+id/time" />
 ``` 
 
-- 实现图：![image-20241201212921252](image-20241201212921252.png)
+- 实现图：
+- ![image-20241201212921252](image-20241201212921252.png)
 
 - 4. 笔记排序功能 
 
@@ -179,6 +182,7 @@ private void performSort() {
 ``` 
 
 **实现图**：
+
 <img width="443" alt="屏幕截图 2024-12-04 201135" src="https://github.com/user-attachments/assets/ccce3dfc-698f-4eeb-b2de-dc923283e73f">
 
 
